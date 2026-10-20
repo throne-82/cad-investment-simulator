@@ -1,0 +1,168 @@
+{
+  "source": "Azure Monitor, PT1M; latest buckets may be incomplete",
+  "start": "2026-10-20T04:29:00Z",
+  "end": "2026-10-20T04:34:00Z",
+  "metrics": [
+    {
+      "name": "Replicas",
+      "unit": "Count",
+      "series": [
+        {
+          "dimensions": [],
+          "samples": [
+            {
+              "average": 1.0,
+              "maximum": 1.0,
+              "timeStamp": "2026-10-20T04:29:00Z",
+              "total": 2.0
+            },
+            {
+              "average": 1.0,
+              "maximum": 1.0,
+              "timeStamp": "2026-10-20T04:30:00Z",
+              "total": 2.0
+            },
+            {
+              "average": 2.0,
+              "maximum": 2.0,
+              "timeStamp": "2026-10-20T04:31:00Z",
+              "total": 4.0
+            },
+            {
+              "average": 2.0,
+              "maximum": 2.0,
+              "timeStamp": "2026-10-20T04:32:00Z",
+              "total": 4.0
+            },
+            {
+              "average": 2.0,
+              "maximum": 2.0,
+              "timeStamp": "2026-10-20T04:33:00Z",
+              "total": 4.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Requests",
+      "unit": "Count",
+      "series": [
+        {
+          "dimensions": [],
+          "samples": [
+            {
+              "average": 0.0,
+              "maximum": 0.0,
+              "timeStamp": "2026-10-20T04:29:00Z",
+              "total": 0.0
+            },
+            {
+              "average": 639.0,
+              "maximum": 639.0,
+              "timeStamp": "2026-10-20T04:30:00Z",
+              "total": 639.0
+            },
+            {
+              "average": 2653.0,
+              "maximum": 3402.0,
+              "timeStamp": "2026-10-20T04:31:00Z",
+              "total": 5306.0
+            },
+            {
+              "average": 2702.5,
+              "maximum": 4030.0,
+              "timeStamp": "2026-10-20T04:32:00Z",
+              "total": 10810.0
+            },
+            {
+              "average": 2595.0,
+              "maximum": 3335.0,
+              "timeStamp": "2026-10-20T04:33:00Z",
+              "total": 12975.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "UsageNanoCores",
+      "unit": "NanoCores",
+      "series": [
+        {
+          "dimensions": [],
+          "samples": [
+            {
+              "average": 2073826.5,
+              "maximum": 2825168.0,
+              "timeStamp": "2026-10-20T04:29:00Z",
+              "total": 4147653.0
+            },
+            {
+              "average": 5936152.5,
+              "maximum": 9646896.0,
+              "timeStamp": "2026-10-20T04:30:00Z",
+              "total": 11872305.0
+            },
+            {
+              "average": 148802122.0,
+              "maximum": 192107461.0,
+              "timeStamp": "2026-10-20T04:31:00Z",
+              "total": 297604244.0
+            },
+            {
+              "average": 172770921.75,
+              "maximum": 245696646.0,
+              "timeStamp": "2026-10-20T04:32:00Z",
+              "total": 691083687.0
+            },
+            {
+              "timeStamp": "2026-10-20T04:33:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WorkingSetBytes",
+      "unit": "Bytes",
+      "series": [
+        {
+          "dimensions": [],
+          "samples": [
+            {
+              "average": 94398464.0,
+              "maximum": 94498816.0,
+              "timeStamp": "2026-10-20T04:29:00Z",
+              "total": 188796928.0
+            },
+            {
+              "average": 95105024.0,
+              "maximum": 95490048.0,
+              "timeStamp": "2026-10-20T04:30:00Z",
+              "total": 190210048.0
+            },
+            {
+              "average": 100192256.0,
+              "maximum": 102350848.0,
+              "timeStamp": "2026-10-20T04:31:00Z",
+              "total": 200384512.0
+            },
+            {
+              "average": 98217984.0,
+              "maximum": 105697280.0,
+              "timeStamp": "2026-10-20T04:32:00Z",
+              "total": 392871936.0
+            },
+            {
+              "average": 100219904.0,
+              "maximum": 101507072.0,
+              "timeStamp": "2026-10-20T04:33:00Z",
+              "total": 400879616.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -26,9 +26,11 @@ Use two images, Nginx and FastAPI, in one Azure Container Apps environment with
 platform-managed networking. Prefer Canada Central, subject to actual quota and availability.
 Start with Consumption replicas at 0.25 vCPU / 0.5 GiB and ACR Basic.
 
-The assessment budget is CAD 10. The required public availability end time is pending
-candidate confirmation. Promotional credit reportedly expires on 2026-11-17; it does not
-replace a retail cost estimate. Do not tear down until evaluator access is no longer required.
+The initial assessment budget target was CAD 10. The candidate authorized keeping
+the URL available and reported approximately CAD 280 in promotional credit, with
+expiry on 2026-11-17. No finite availability end date was supplied. Credit does not
+replace a retail estimate or guarantee indefinite hosting within CAD 10. See
+[cost assumptions](costs.md); do not tear down while evaluator access is required.
 
 ## Initial observations
 
@@ -40,6 +42,28 @@ replace a retail cost estimate. Do not tear down until evaluator access is no lo
 - GitHub CLI authentication was established; repository write and Project #2 read access verified.
 - Canada Central is advertised for Container Apps. Microsoft.App initially required registration;
   initial regional quota returned zero environments. Recheck before provisioning hosting.
+
+## Actual delivery evidence
+
+- The registration/quota prerequisite was resolved and the environment was deployed
+  in Canada Central. Bootstrap was applied locally, then its protected local state
+  was migrated to a separate Azure Blob backend.
+- Local API, frontend and Docker integration were implemented progressively and
+  merged through PRs. No develop branch or persisted history was added.
+- Main deployments authenticate through OIDC and deploy real immutable image
+  digests using application Terraform. Deploy run 39369337100 succeeded at about
+  04:25 UTC, including the public smoke check.
+- Two deployment failures led to concrete fixes: the exact immutable GitHub OIDC
+  subject and Nginx upstream certificate verification depth. TLS verification was
+  retained. Subsequent deployment succeeded.
+- At 04:29–04:35 UTC, a real public k6 test issued 49,224 requests, observed backend
+  scale-out from one to four and recorded p95 1,080.87 ms and three failed requests.
+  The latency target failed and is reported honestly. A subsequent low-load check passed.
+- Log Analytics ingestion, HTTP controls, scoped roles, image/dependency audits,
+  non-root execution and local backend recovery were checked. Image vulnerabilities
+  remain documented; the scan is not a claim of complete security.
+- Final documentation and sanitized evidence are in [verification](verification.md)
+  and [operations](operations.md). Optional issue #13 remains deferred.
 
 ## Development workflow
 

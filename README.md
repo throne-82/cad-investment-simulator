@@ -53,3 +53,17 @@ Total contributions include the initial principal.
 
 The backend rejects extra fields, incorrect types, non-finite numbers
 and values outside the supported bounds.
+
+## Assessment delivery
+
+Public demo: https://cad-frontend.greenmushroom-f0d12a6f.canadacentral.azurecontainerapps.io
+
+- [Deployment, state, identity and teardown runbook](docs/operations.md)
+- [Measured verification results and limitations](docs/verification.md)
+- [Cost assumptions and availability decision](docs/costs.md)
+- [Presentation walkthrough](docs/demo.md)
+
+Run the public smoke check with `python scripts/smoke_test.py PUBLIC_URL`.
+For backend-only development, use
+`python -m uvicorn app.main:app --app-dir backend --reload` after installing dependencies.
+The API documentation is available at http://127.0.0.1:8000/docs in that mode.
