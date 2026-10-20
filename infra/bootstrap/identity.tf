@@ -17,7 +17,7 @@ resource "azurerm_federated_identity_credential" "github" {
   user_assigned_identity_id = azurerm_user_assigned_identity.deployment.id
   issuer                    = "https://token.actions.githubusercontent.com"
   audience                  = ["api://AzureADTokenExchange"]
-  subject                   = "repo:throne-82/cad-investment-simulator:ref:refs/heads/main"
+  subject                   = "repo:throne-82@91632987/cad-investment-simulator@1425861975:ref:refs/heads/main"
 }
 
 
