@@ -24,14 +24,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.13
+          python-version: "3.13"
           cache: pip
           cache-dependency-path: backend/requirements*.txt
           
-      name: Install dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r backend/requirements.txt
+          pip install -r backend/requirements-dev.txt
 
       - name: Check Python code
         run: python -m ruff check backend
@@ -42,13 +42,13 @@ jobs:
         run: python -m pytest backend/tests -q
 
       - name: Audit runtime dependencies
-        run: python -m pip-audit -r backend/requirements.txt --no-deps --disable-pip
+        run: python -m pip_audit -r backend/requirements.txt --no-deps --disable-pip
       
       - name: Validate Compose configuration
         run: docker compose config --quiet
 
       - name: Build and Start services
-        run: docker compose upp --build -d --wait
+        run: docker compose up --build -d --wait
 
       - name: Verify frontend and API proxy
         run: |
@@ -86,3 +86,17 @@ jobs:
       - name: Stop services
         if: always()
         run: docker compose down
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.6.5"
+          terraform_wrapper: false
+
+      - name: Validate Terraform
+        run: |
+          terraform fmt -check -recursive infra
+          terraform -chdir=infra/bootstrap init -backend=false -input=false
+          terraform -chdir=infra/bootstrap validate
+          terraform -chdir=infra/application init -backend=false -input=false
+          terraform -chdir=infra/application validate
