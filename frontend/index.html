@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAD Investment Simulator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>CAD Investment Simulator</h1>
+    <p>Estimate investment growth with contributions at month end.</p>
+
+    <form id="simulation-form">
+      <label>
+        Initial principal (CAD)
+        <input name="initial_principal" type="number"
+          min="0" max="10000000" step="0.01" value="1000" required>
+      </label>
+
+      <label>
+        Monthly contribution (CAD)
+        <input name="monthly_contribution" type="number"
+          min="0" max="100000" step="0.01" value="100" required>
+      </label>
+
+      <label>
+        Effective annual interest rate (%)
+        <input name="annual_rate_percent" type="number"
+          min="0" max="100" step="0.01" value="5" required>
+      </label>
+
+      <label>
+        Duration (years)
+        <input name="years" type="number"
+          min="1" max="60" step="1" value="10" required>
+      </label>
+
+      <button type="submit">Simulate</button>
+    </form>
+
+    <p id="status" role="status" aria-live="polite"></p>
+
+    <section id="results" hidden>
+      <h2>Simulation results</h2>
+      <p>Total contributions: <strong id="contributions"></strong></p>
+      <p>Interest earned: <strong id="interest"></strong></p>
+      <p>Final balance: <strong id="balance"></strong></p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Annual progression</caption>
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">Contributions</th>
+              <th scope="col">Interest</th>
+              <th scope="col">Balance</th>
+            </tr>
+          </thead>
+          <tbody id="annual-results"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <p>Estimates exclude taxes, inflation and fees.</p>
+  </main>
+</body>
+</html>
