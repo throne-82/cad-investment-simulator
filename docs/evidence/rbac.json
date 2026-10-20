@@ -1,0 +1,23 @@
+{
+  "observed_at": "2026-10-20T04:34:33.033716+00:00",
+  "id-cad-deployment": [
+    {
+      "role": "Contributor",
+      "scope": "/subscriptions/ea8b276d-8d77-4b1d-9f18-ad996cffd493/resourceGroups/rg-cad-application-387fb801"
+    },
+    {
+      "role": "AcrPush",
+      "scope": "/subscriptions/ea8b276d-8d77-4b1d-9f18-ad996cffd493/resourceGroups/rg-cad-application-387fb801/providers/Microsoft.ContainerRegistry/registries/cadacr387fb801"
+    },
+    {
+      "role": "Storage Blob Data Contributor",
+      "scope": "/subscriptions/ea8b276d-8d77-4b1d-9f18-ad996cffd493/resourceGroups/rg-cad-bootstrap-387fb801/providers/Microsoft.Storage/storageAccounts/cadstate387fb801/blobServices/default/containers/application"
+    }
+  ],
+  "id-cad-image-pull": [
+    {
+      "role": "AcrPull",
+      "scope": "/subscriptions/ea8b276d-8d77-4b1d-9f18-ad996cffd493/resourceGroups/rg-cad-application-387fb801/providers/Microsoft.ContainerRegistry/registries/cadacr387fb801"
+    }
+  ]
+}

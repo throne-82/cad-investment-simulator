@@ -1,0 +1,180 @@
+{
+  "source": "az containerapp replica list, approximately every 15\u201320 seconds; both apps sampled sequentially",
+  "samples": [
+    {
+      "time": "2026-10-20T04:29:26.939317+00:00",
+      "replicas": {
+        "cad-backend": 1,
+        "cad-frontend": 1
+      }
+    },
+    {
+      "time": "2026-10-20T04:29:45.899190+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 1
+      }
+    },
+    {
+      "time": "2026-10-20T04:30:03.398858+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:30:21.104879+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:30:38.435722+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:30:55.831721+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:31:13.774123+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:31:31.482865+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:31:49.280479+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:32:07.027267+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:32:24.809848+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:32:42.463927+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:32:59.578248+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:33:17.385631+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:33:41.481276+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:33:59.731865+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:34:16.817644+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:34:34.442135+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:34:52.056293+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:35:09.586884+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:35:27.402436+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:35:48.900028+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:36:06.197553+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:36:23.637637+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    },
+    {
+      "time": "2026-10-20T04:36:50.638852+00:00",
+      "replicas": {
+        "cad-backend": 4,
+        "cad-frontend": 2
+      }
+    }
+  ]
+}

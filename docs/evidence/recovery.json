@@ -1,0 +1,26 @@
+[
+  {
+    "time": "2026-10-20T04:31:19.810041+00:00",
+    "step": "baseline-api",
+    "status": 200
+  },
+  {
+    "time": "2026-10-20T04:31:21.384122+00:00",
+    "step": "frontend-with-backend-stopped",
+    "status": 200
+  },
+  {
+    "time": "2026-10-20T04:31:26.396830+00:00",
+    "step": "api-with-backend-stopped",
+    "status": 504
+  },
+  {
+    "step": "restart-backend",
+    "exit_code": 0
+  },
+  {
+    "time": "2026-10-20T04:31:32.176304+00:00",
+    "step": "recovered-api",
+    "status": 200
+  }
+]

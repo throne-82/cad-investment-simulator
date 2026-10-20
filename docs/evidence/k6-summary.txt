@@ -1,0 +1,46 @@
+  █ THRESHOLDS 
+
+    checks
+    ✓ 'rate>0.99' rate=99.99%
+
+    http_req_duration
+    ✗ 'p(95)<500' p(95)=1.08s
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 98448  298.204161/s
+    checks_succeeded...: 99.99% 98442 out of 98448
+    checks_failed......: 0.00%  6 out of 98448
+
+    ✗ status is 200
+      ↳  99% — ✓ 49221 / ✗ 3
+    ✗ annual progression matches duration
+      ↳  99% — ✓ 49221 / ✗ 3
+
+    HTTP
+    http_req_duration..............: avg=357.82ms min=19.29ms med=130.62ms max=5.08s p(90)=962.76ms p(95)=1.08s
+      { expected_response:true }...: avg=357.53ms min=19.29ms med=130.54ms max=2.8s  p(90)=962.58ms p(95)=1.08s
+    http_req_failed................: 0.00%  3 out of 49224
+    http_reqs......................: 49224  149.102081/s
+
+    EXECUTION
+    iteration_duration.............: avg=358.32ms min=19.83ms med=131.32ms max=5.08s p(90)=963.16ms p(95)=1.08s
+    iterations.....................: 49224  149.102081/s
+    vus............................: 2      min=2          max=100
+    vus_max........................: 100    min=100        max=100
+
+    NETWORK
+    data_received..................: 156 MB 471 kB/s
+    data_sent......................: 9.5 MB 29 kB/s
+
+
+
+
+running (5m30.1s), 000/100 VUs, 49224 complete and 0 interrupted iterations
+default ✓ [ 100% ] 000/100 VUs  5m30s
+time="2026-10-20T04:34:58Z" level=error msg="thresholds on metrics 'http_req_duration' have been crossed"
+

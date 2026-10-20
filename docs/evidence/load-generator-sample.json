@@ -1,0 +1,17 @@
+{
+  "time": "2026-10-20T04:33:15.048322+00:00",
+  "source": "Docker Desktop local k6 container; one sample, not a bottleneck proof",
+  "samples": [
+    {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "23.49%",
+      "Container": "08b147e7f70e",
+      "ID": "08b147e7f70e",
+      "MemPerc": "1.67%",
+      "MemUsage": "65.26MiB / 3.825GiB",
+      "Name": "hardcore_poincare",
+      "NetIO": "124MB / 13.6MB",
+      "PIDs": "14"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "observed_at": "2026-10-20T04:33:55.821639+00:00",
+  "registry": {
+    "adminUserEnabled": false,
+    "name": "cadacr387fb801",
+    "sku": "Basic"
+  },
+  "storage": {
+    "httpsOnly": true,
+    "name": "cadstate387fb801",
+    "publicBlobs": false,
+    "sharedKey": false,
+    "tls": "TLS1_2"
+  },
+  "state_blob": {
+    "exists": true
+  },
+  "backend": {
+    "allowInsecure": false,
+    "cpu": 0.25,
+    "external": false,
+    "image": "cadacr387fb801.azurecr.io/backend@sha256:1130e8fa72905bb33da044980611462c47bca727676664624ae8a9278462b7d4",
+    "memory": "0.5Gi",
+    "name": "cad-backend",
+    "scale": {
+      "cooldownPeriod": 300,
+      "maxReplicas": 4,
+      "minReplicas": 1,
+      "pollingInterval": 30,
+      "rules": [
+        {
+          "http": {
+            "auth": [],
+            "metadata": {
+              "concurrentRequests": "2"
+            }
+          },
+          "name": "http-concurrency"
+        }
+      ]
+    }
+  },
+  "frontend": {
+    "allowInsecure": false,
+    "cpu": 0.25,
+    "external": true,
+    "image": "cadacr387fb801.azurecr.io/frontend@sha256:04047aa8ef3e303fc9372bb0ca6f0fa1721e9622c88c1d6a9cc1fda4f873a402",
+    "memory": "0.5Gi",
+    "name": "cad-frontend",
+    "scale": {
+      "cooldownPeriod": 300,
+      "maxReplicas": 2,
+      "minReplicas": 1,
+      "pollingInterval": 30,
+      "rules": [
+        {
+          "http": {
+            "auth": [],
+            "metadata": {
+              "concurrentRequests": "50"
+            }
+          },
+          "name": "http-concurrency"
+        }
+      ]
+    }
+  },
+  "tracked_state_or_plan_files": []
+}

@@ -1,0 +1,7 @@
+{
+  "image": "cadacr387fb801.azurecr.io/frontend@sha256:04047aa8ef3e303fc9372bb0ca6f0fa1721e9622c88c1d6a9cc1fda4f873a402",
+  "scanner": "Trivy 0.76.0",
+  "created_at": "2026-10-20T04:35:16.508801295Z",
+  "high_critical_package_findings": 0,
+  "findings": []
+}

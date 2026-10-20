@@ -1,0 +1,13 @@
+{
+  "note": "Filtered sample, not a complete count; client/internal IPs redacted. HTTP status parsed separately from response-byte count.",
+  "rows": [
+    {
+      "time": "2026-10-20T04:33:02.3554193Z",
+      "log": "2026/10/20 04:33:01 [error] 35#35: *7112 upstream timed out (110: Operation timed out) while connecting to upstream, client: [redacted-ip], server: _, request: \"POST /api/simulate HTTP/1.1\", upstream: \"https://[redacted-ip]:443/api/simulate\", host: \"cad-frontend.greenmushroom-f0d12a6f.canadacentral.azurecontainerapps.io\""
+    },
+    {
+      "time": "2026-10-20T04:33:02.3554193Z",
+      "log": "[redacted-ip] - - [20/Oct/2026:04:33:01 +0000] \"POST /api/simulate HTTP/1.1\" 504 160 \"-\" \"Grafana k6/2.3.0\" \"[redacted-ip]\""
+    }
+  ]
+}

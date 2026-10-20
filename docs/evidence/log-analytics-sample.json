@@ -1,0 +1,42 @@
+[
+  {
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-10-20T04:29:45.1291655Z",
+    "duration_ms": "1.66",
+    "request_id": "395e85a01f32aa61f23307009766e1f7",
+    "route": "/api/simulate",
+    "status": "200"
+  },
+  {
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-10-20T04:29:45.1291655Z",
+    "duration_ms": "1.59",
+    "request_id": "274be9ac5f5aacfa3217a948584db042",
+    "route": "/api/simulate",
+    "status": "200"
+  },
+  {
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-10-20T04:29:45.1291655Z",
+    "duration_ms": "1.84",
+    "request_id": "6373031ed7bb6181c84b02aef11d8a00",
+    "route": "/api/simulate",
+    "status": "200"
+  },
+  {
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-10-20T04:29:45.1291655Z",
+    "duration_ms": "1.53",
+    "request_id": "6a70c9655f60cbef173e1fe9a1fda4f5",
+    "route": "/api/simulate",
+    "status": "200"
+  },
+  {
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-10-20T04:29:45.1291655Z",
+    "duration_ms": "2.74",
+    "request_id": "d40fd82c8c1d64313e52578f16e49897",
+    "route": "/api/simulate",
+    "status": "200"
+  }
+]

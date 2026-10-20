@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-10-20T04:32:26.172019+00:00",
+  "checks": [
+    {
+      "check": "http-redirect",
+      "status": 301,
+      "location": "https://cad-frontend.greenmushroom-f0d12a6f.canadacentral.azurecontainerapps.io/",
+      "request_id": null,
+      "body": ""
+    },
+    {
+      "check": "https-health",
+      "status": 200,
+      "location": null,
+      "request_id": "4f30968c123b83fa2b71aa1c1afd9ac0",
+      "body": "{\"status\":\"ok\"}"
+    },
+    {
+      "check": "invalid-input",
+      "status": 422,
+      "location": null,
+      "request_id": "df8f838ff192c17ced4c70fd4dc77d1a",
+      "body": "{\"detail\":[{\"field\":\"body.initial_principal\",\"message\":\"Field required\"},{\"field\":\"body.monthly_contribution\",\"message\":\"Field required\"},{\"field\":\"body.annual_rate\",\"message\":\"Field required\"},{\"field\":\"body.years\",\"message\":\"Input should be less than or equal to 60\"}]}"
+    },
+    {
+      "check": "internal-backend-from-outside",
+      "status": 404,
+      "location": null,
+      "request_id": null,
+      "body": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Azure Container App - Unavailable</title>\n    <style type=\"text/css\">\n        html {\n            height: 100%;\n            width: 100%;\n        }\n\n        #feature {\n            width: 960px;\n            margin: 95px auto 0 auto;\n            overflow: auto;\n        }\n\n        #content {\n            font-family: \"Segoe UI\";\n            font-weight: normal;\n            font-size: 22px;\n            color: #ffffff;\n            float: left;\n            width: "
+    }
+  ]
+}
