@@ -1,0 +1,98 @@
+name: Deploy
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+    
+permissions:
+    contents: read
+
+concurrency:
+    group: azure-application
+    cancel-in-progress: false
+
+jobs:
+    deploy:
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+
+        permissions:
+            contents: read
+            id-token: write
+        
+        env:
+            ARM_USE_OIDC: "true"
+            ARM_USE_AZUREAD: "true"
+            ARM_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
+            ARM_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
+            ARM_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+            AZURE_CONFIG: ${{ vars.AZURE_CONFIG }}
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: "3.13"
+
+            - name: Install validation dependencies
+              run: python -m pip install -r backend/requirements-dev.txt
+
+            - name: Validate Python
+              env:
+                  PYTHONPATH: backend
+              run: |
+                python -m ruff check backend scripts
+                python -m pytest backend/tests -q
+
+            - name: Set up Terraform
+              uses: hashicorp/setup-terraform@v2
+              with:
+                  terraform_version: 1.6.5
+                  terraform_wrapper: false
+
+            - name: Prepare deployment configuration
+              run: python scripts/prepare_deployment.py
+
+            - name: Authenticate to Azure through OIDC
+              uses: azure/login@v1
+              with:
+                  client-id: ${{ vars.AZURE_CLIENT_ID }}
+                  tenant-id: ${{ vars.AZURE_TENANT_ID }}
+                  subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+            - name: Initiate and Validate Terraform
+              run: |
+                terraform fmt -check -recursive infra
+                terraform -chdir=infra/application init -input=false -backend-config=../../.local/application.backend.hcl
+                terraform -chdir=infra/application validate
+
+            - name: Authenticate Docer to ACR
+              run: az acr login --name "$ACR_NAME"
+
+            - name: Build and Push Docker Image
+              run: |
+                docker build --platform linux/amd64 -t "$REGISTRY/backend:$GITHUB_SHA" backend
+                docker push "$REGISTRY/backend:$GITHUB_SHA"
+                docker build --platform linux/amd64 -t "$REGISTRY/frontend:$GITHUB_SHA" frontend
+                docker push "$REGISTRY/frontend:$GITHUB_SHA"
+
+            - name: Resolve image References
+              run: python scripts/prepare_deployment.py --digests
+
+            - name: Plan application deployment
+              run: terraform -chdir=infra/application plan -input=false -var-file=../../.local/application.tfvars.json -out=../../.local/application.tfplan
+
+            - name: Apply application deployment
+              run: terraform -chdir=infra/application apply -input=false ../../.local/application.tfplan
+
+            - name: Verify public deployment
+              run: |
+                url="$(terraform -chdir=infra/application output -raw frontend_url)"
+                curl --fail --silent --show-error --max-time 15 --retry 8 --retry-delay 5 --retry-all-errors "$url/api/health"
+                python scripts/smoke_test.py "$url"
+                printf 'Public URL: %s\n' "$url" >> "$GITHUB_STEP_SUMMARY"
