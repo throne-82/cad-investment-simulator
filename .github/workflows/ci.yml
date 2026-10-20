@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r backend/requirements.txt
+          pip install -r backend/requirements-dev.txt
 
       - name: Check Python code
         run: python -m ruff check backend
@@ -86,3 +86,17 @@ jobs:
       - name: Stop services
         if: always()
         run: docker compose down
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.6.5"
+          terraform_wrapper: false
+
+      - name: Validate Terraform
+        run: |
+          terraform fmt -check -recursive infra
+          terraform -chdir=infra/bootstrap init -backend=false -input=false
+          terraform -chdir=infra/bootstrap validate
+          terraform -chdir=infra/application init -backend=false -input=false
+          terraform -chdir=infra/application validate
