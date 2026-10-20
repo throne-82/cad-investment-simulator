@@ -69,6 +69,12 @@ bodies and authorization headers are absent from the structured schema. A
 diagnostic check also verified they were absent for a synthetic sample request.
 The runbook includes KQL for errors, latency and correlation lookup.
 
+The [platform log sample](evidence/system-log-sample.json) records container
+creation/start and a failed readiness probe during scale-out. The replica
+timeline distinguishes allocated from ready replicas; all four backend replicas
+were ready by 04:30:38 and both frontend replicas by 04:31:13, with zero container
+restarts in those samples. Allocation alone was not counted as readiness.
+
 Azure Monitor metrics were queried for both apps: replica count, requests,
 CPU nanocores and working-set bytes. Ingestion can lag; incomplete latest buckets
 must not be interpreted as a real zero-replica outage. The direct replica timeline
@@ -95,8 +101,8 @@ The run started at 04:29:26 and completed around 04:34:58. See the
 | Median / average latency | 130.62 / 357.82 ms | Observational |
 | Maximum latency | 5,080.22 ms | Observational |
 | Checks | 98,442 / 98,448 = 99.9939% | Above 99%: passed |
-| Backend replicas | 1 initially, 4 by 04:29:45 | Aim 1 to 4: observed |
-| Frontend replicas | 1 initially, 2 by 04:30:03 | Max 2: observed |
+| Backend replicas | 1 initially, 4 allocated by 04:29:45, 4 ready by 04:30:38 | Aim 1 to 4: observed |
+| Frontend replicas | 1 initially, 2 allocated by 04:30:03, 2 ready by 04:31:13 | Max 2: observed |
 
 k6 exited **99** because the latency threshold failed. No threshold was relaxed
 after seeing the result. The summary-export format uses a `true` threshold flag
@@ -121,7 +127,7 @@ CPU and 65.26 MiB memory; this single sample cannot exclude every client bottlen
 The representative conclusion is successful scale-out and very low error rate,
 with a missed latency target under the 100-VU offered load. Production tuning
 requires capacity and arrival-rate measurements; four replicas do not establish
-four-times throughput. Replica sampling continues after the test to record cooldown.
+four-times throughput. The [replica timeline](evidence/replica-timeline.json) includes the cooldown window. cad-backend had 4 replicas at the last sample (2026-10-20T04:40:29.074812+00:00); return to one was not observed in this collection window. cad-frontend had 2 replicas at the last sample (2026-10-20T04:40:29.074812+00:00); return to one was not observed in this collection window. The configured minimum remains one on each app; no manual replica reset was used.
 
 A separate **30-second, two-VU post-load check** used the same script with CLI
 override `--vus 2 --stage 30s:2`, keeping every threshold unchanged. It produced

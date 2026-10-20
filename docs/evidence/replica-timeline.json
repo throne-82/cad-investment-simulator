@@ -1,179 +1,559 @@
 {
-  "source": "az containerapp replica list, approximately every 15\u201320 seconds; both apps sampled sequentially",
+  "source": "az containerapp replica list, approximately every 15\u201320 seconds; apps sampled sequentially. count includes pending replicas; ready requires nonempty container status and all containers ready.",
   "samples": [
     {
       "time": "2026-10-20T04:29:26.939317+00:00",
-      "replicas": {
-        "cad-backend": 1,
-        "cad-frontend": 1
+      "apps": {
+        "cad-backend": {
+          "count": 1,
+          "ready": 1,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 1,
+          "ready": 1,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:29:45.899190+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 1
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 1,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 1,
+          "ready": 1,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:30:03.398858+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 1,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 1,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:30:21.104879+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 1,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 1,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:30:38.435722+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 1,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:30:55.831721+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 1,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:31:13.774123+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:31:31.482865+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:31:49.280479+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:32:07.027267+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:32:24.809848+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:32:42.463927+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:32:59.578248+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:33:17.385631+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:33:41.481276+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:33:59.731865+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:34:16.817644+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:34:34.442135+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:34:52.056293+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:35:09.586884+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:35:27.402436+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:35:48.900028+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:36:06.197553+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:36:23.637637+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     },
     {
       "time": "2026-10-20T04:36:50.638852+00:00",
-      "replicas": {
-        "cad-backend": 4,
-        "cad-frontend": 2
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:37:08.140738+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:37:27.006149+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:37:44.554720+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:38:05.023334+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:38:22.501569+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:38:43.064507+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:39:00.418927+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:39:18.103767+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:39:35.985192+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:39:53.584254+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:40:11.204390+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
+      }
+    },
+    {
+      "time": "2026-10-20T04:40:29.074812+00:00",
+      "apps": {
+        "cad-backend": {
+          "count": 4,
+          "ready": 4,
+          "restarts": 0
+        },
+        "cad-frontend": {
+          "count": 2,
+          "ready": 2,
+          "restarts": 0
+        }
       }
     }
   ]

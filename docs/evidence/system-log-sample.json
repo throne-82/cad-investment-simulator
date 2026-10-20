@@ -1,0 +1,23 @@
+[
+  {
+    "Log_s": "Probe of Readiness failed with status code: ",
+    "Reason_s": "ProbeFailed",
+    "RevisionName_s": "cad-backend--0000003",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-10-20T04:30:04.864156Z"
+  },
+  {
+    "Log_s": "Started container 'backend'",
+    "Reason_s": "ContainerStarted",
+    "RevisionName_s": "cad-backend--0000003",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-10-20T04:30:03.909487Z"
+  },
+  {
+    "Log_s": "Created container 'backend'",
+    "Reason_s": "ContainerCreated",
+    "RevisionName_s": "cad-backend--0000003",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-10-20T04:30:03.909487Z"
+  }
+]
